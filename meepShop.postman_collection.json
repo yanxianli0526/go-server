@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "69fc4fa3-9ccb-40ad-a4b9-7455b71a82e1",
+		"name": "meepShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14086919",
+		"_collection_link": "https://lively-meteor-217331.postman.co/workspace/My-Workspace~770abf0b-7dcf-4e7c-8a59-9a2e4b91aa49/collection/14086919-69fc4fa3-9ccb-40ad-a4b9-7455b71a82e1?action=share&source=collection_link&creator=14086919"
+	},
+	"item": [
+		{
+			"name": "healthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/readyz",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"readyz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveMoney",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newDeposit\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/user/e0e04293-691b-48d3-9838-6534d1f214c6/saveMoney",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"e0e04293-691b-48d3-9838-6534d1f214c6",
+						"saveMoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "withdrawMoney",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newDeposit\": 15\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/user/e0e04293-691b-48d3-9838-6534d1f214c6/withdrawMoney",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"e0e04293-691b-48d3-9838-6534d1f214c6",
+						"withdrawMoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transferMoney",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newDeposit\": 10,\n    \"transferOutUserIdStr\": \"e0e04293-691b-48d3-9838-6534d1f214c6\",\n    \"transferInUserIdStr\": \"ea900cd3-6825-48f0-98a8-37b50bc92903\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/user/transferMoney",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"transferMoney"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

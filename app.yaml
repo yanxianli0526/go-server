@@ -1,0 +1,12 @@
+gin:
+  mode: release
+server:
+  port: 8080
+db:
+  postgres:
+    host: localhost
+    port: 5432
+    DBName: meepShopTest
+    User: test
+    Password: test
+    SSLMode: disable

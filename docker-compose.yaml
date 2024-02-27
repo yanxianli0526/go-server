@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  golang-server:
+    container_name: my-server
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - my-network
+    environment:
+      DB_POSTGRES_HOST: "postgres"
+    volumes:
+      - ./app.yaml:/src/app.yaml
+
+  postgres:
+    container_name: postgres
+    image: postgres:14.9
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: meepShopTest
+    volumes:
+      - ./meepShopTest.sql:/docker-entrypoint-initdb.d/meepShopTest.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 8s
+      timeout: 3s
+      retries: 3
+    networks:
+      - my-network
+
+networks:
+  my-network:
