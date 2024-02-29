@@ -11,7 +11,7 @@
 
 ## how to test api 
 可以用postman import meepShop.postman_collection.json,原則上有執行過`make docker-up-db`就可以直接用裡面的api測試  
-![postman.png](postman.png.png)
+![postman.png](postman.png)
 
 ## how to run server and DB
 ### use docker compose
