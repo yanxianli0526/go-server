@@ -26,16 +26,13 @@ func Test_unit_CheckTotalDepositIsGreaterThanZero(t *testing.T) {
 		{userDeposit: -100.0, newDeposit: -50.0, expected: 0, wantErr: true},
 	}
 
-	// 遍歷測試用例
 	for _, tc := range testCases {
-		// 調用被測試函數
 		result, err := service.CheckTotalDepositIsGreaterThanZero(tc.userDeposit, tc.newDeposit)
 		if err != nil {
 			if tc.wantErr != false && result != tc.expected {
 				t.Errorf("CheckTotalDepositIsGreaterThanZero(%f, %f) = %f; err %f", tc.userDeposit, tc.newDeposit, result, tc.expected)
 			}
 		}
-		// 斷言預期結果是否相等
 		if result != tc.expected {
 			t.Errorf("CheckTotalDepositIsGreaterThanZero(%f, %f) = %f; expected %f", tc.userDeposit, tc.newDeposit, result, tc.expected)
 		}
